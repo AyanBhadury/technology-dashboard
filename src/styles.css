@@ -1,1 +1,239 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: avenir-medium;
+    font-style: normal;
+    src: url(./assets/fonts/avenir/AvenirLTStd-Medium.ttf) format("truetype"), url(./assets/fonts/avenir/AvenirLTStd-Medium.eot) format("eot"), url(./assets/fonts/avenir/AvenirLTStd-Medium.woff) format("woff"), url(./assets/fonts/avenir/AvenirLTStd-Medium.otf) format("opentype")
+}
+
+@font-face {
+    font-family: avenir-heavy;
+    font-style: normal;
+    src: url(./assets/fonts/avenir/AvenirLTStd-Heavy.ttf) format("truetype"), url(./assets/fonts/avenir/AvenirLTStd-Heavy.eot) format("eot"), url(./assets/fonts/avenir/AvenirLTStd-Heavy.woff) format("woff"), url(./assets/fonts/avenir/AvenirLTStd-Heavy.otf) format("opentype")
+}
+
+@font-face {
+    font-family: avenir-black;
+    font-style: normal;
+    src: url(./assets/fonts/avenir/AvenirLTStd-Black.ttf) format("truetype"), url(./assets/fonts/avenir/AvenirLTStd-Black.eot) format("eot"), url(./assets/fonts/avenir/AvenirLTStd-Black.woff) format("woff"), url(./assets/fonts/avenir/AvenirLTStd-Black.otf) format("opentype")
+}
+
+body {
+    font-family: "avenir-medium" !important;
+    padding-top: 5rem;
+}
+
+.logo {
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: -0.18px;
+    line-height: 21px;
+    padding: 8px 14px;
+    color: #fff;
+    background-color: #6676C7;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.logo, .title {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.title, .name {
+    color: #fff;
+}
+
+.badge {
+    background: transparent;
+    padding: 6px 16px;
+    border-radius: 16px;
+    cursor: pointer;
+    color: #686980;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+}
+
+.badge.badge-pill.badge-secondary {
+    color: white;
+    background-color: #6676C7;
+}
+
+.fc_fire, .fc_dashboard {
+    font-size: 25px;
+    color: #fff;
+    position: absolute;
+}
+
+.fc_vue, .fc_angular, .fc_react, .fc_ember_logo {
+    font-size: 16px;
+    vertical-align: middle !important;
+    color: #000000;
+    opacity: 0.7;
+}
+
+.icon-text {
+    vertical-align: middle !important;
+}
+
+.fc_fire {
+    top: 5px;
+    left: 7px;
+}
+
+.fc_dashboard {
+    top: 6px;
+    left: 6px;
+}
+
+#gauge-wrapper .card .card-body {
+    min-height: 300px;
+}
+
+.heading {
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: -0.1px;
+    line-height: 22px;
+    color: #434456;
+    font-family: "avenir-heavy";
+    margin-bottom: 0;
+}
+
+.name {
+    font-size: 14px;
+    /* color: #434456; */
+    font-weight: 500;
+    line-height: 19px;
+}
+
+img.rounded-circle {
+    height: 42px;
+    width: 42px;
+    border: 1px solid rgba(62, 57, 107, 0.03);
+    border: 0 !important;
+}
+
+.icon {
+    height: 37px;
+    width: 37px;
+    background: #686980;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+}
+
+.trend {
+    color: #434456;
+    font-family: Avenir;
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: -0.11px;
+    line-height: 23px;
+    font-family: "avenir-black";
+    /* padding-left: 13px; */
+}
+
+.overview {
+    color: #434456;
+    font-family: Avenir;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: -0.11px;
+    line-height: 25px;
+    /* padding-left: 13px; */
+    font-family: "avenir-black";
+}
+
+.trend, .overview {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0;
+}
+
+#quality, #popularity, #score {
+    padding: 0;
+}
+
+.container {
+    width: 80% !important;
+    margin: 0 auto;
+}
+
+.shadow {
+    box-shadow: 0 6px 40px 0 rgba(33, 35, 68, 0.2)!important;
+}
+
+.navbar {
+    background-color: #3949AB!important
+}
+
+.list-inline {
+    display: inline-block
+}
+
+@media (max-width: 767px) {
+    .list-inline {
+        display: block;
+        margin-top: 20px;
+        margin-left: 22px;
+    }
+}
+
+@media (min-width:1600px) {
+    .container {
+        max-width: 1560px !important;
+    }
+}
+
+@media (min-width:992px) {
+    nav {
+        padding-right: 3rem !important;
+        padding-left: 3rem !important;
+    }
+}
+
+.card-body {
+    padding: 1.2rem !important;
+}
+
+.card-title {
+    font-family: "avenir-black";
+    color: #5A5B75;
+}
+
+.subcaption {
+    font-family: "avenir-medium";
+    color: #979797;
+}
+
+.selected_icon {
+    opacity: 1;
+    color: #fff;
+}
+
+@media (max-width: 374px) {
+    .overview.h4 {
+        padding-left: 47px !important;
+    }
+    .overview.h4 .icon {
+        float: left;
+        margin-left: -47px;
+    }
+    .overview.h4 .overview {
+        float: left;
+    }
+}
+
+.api-info {
+    font-size: 14px;
+    color: #808080;
+    text-align: center;
+}
+
+footer .footer-bottom {
+    background-color: #fff;
+}
