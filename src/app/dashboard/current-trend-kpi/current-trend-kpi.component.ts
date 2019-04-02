@@ -157,7 +157,6 @@ export class CurrentTrendKpiComponent implements OnInit {
   ngOnInit() {
   }
   onSelectionChange(lang) {
-    //this.fetchnpmsdata();
     this.lang = lang;
     this.score_data.chart.updateAnimDuration = 0.6;
     this.quality_data.chart.updateAnimDuration = 0.6;
@@ -169,37 +168,31 @@ export class CurrentTrendKpiComponent implements OnInit {
         this.quality_data.chart.paletteColors = this.tech_stack[i].pColors
         this.popularity_data.chart.paletteColors = this.tech_stack[i].pColors
 
-        this.score_data.chart.defaultCenterLabel = Math.floor((this.pointer_data[i+(i+1)].value) * 100).toString() + '%';
-        this.quality_data.chart.defaultCenterLabel = Math.floor((this.quality_arr[i+(i+1)].value) * 100).toString() + '%';
-        this.popularity_data.chart.defaultCenterLabel = Math.floor((this.popularity_arr[i+(i+1)].value) * 100).toString() + '%';
+        this.score_data.chart.defaultCenterLabel = Math.floor((this.pointer_data[i + (i + 1)].value) * 100).toString() + '%';
+        this.quality_data.chart.defaultCenterLabel = Math.floor((this.quality_arr[i + (i + 1)].value) * 100).toString() + '%';
+        this.popularity_data.chart.defaultCenterLabel = Math.floor((this.popularity_arr[i + (i + 1)].value) * 100).toString() + '%';
 
-        this.score_data.data = [ {
-          // label: Object.keys(data)[i],
-          value: 100 - Math.floor((this.pointer_data[i+(i+1)].value) * 100)
+        this.score_data.data = [{
+          value: 100 - Math.floor((this.pointer_data[i + (i + 1)].value) * 100)
         },
-          {
-            //label: this.pointer_data[i+(i+1)].label,
-            value: Math.floor((this.pointer_data[i+(i+1)].value) * 100)
-          }
+        {
+          value: Math.floor((this.pointer_data[i + (i + 1)].value) * 100)
+        }
         ];
         this.quality_data.data = [
           {
-            // label: Object.keys(data)[i],
-            value: 100 - Math.floor((this.quality_arr[i+(i+1)].value) * 100)
+            value: 100 - Math.floor((this.quality_arr[i + (i + 1)].value) * 100)
           },
           {
-          //  label: this.quality_arr[i+(i+1)].label,
-            value: Math.floor((this.quality_arr[i+(i+1)].value) * 100)
+            value: Math.floor((this.quality_arr[i + (i + 1)].value) * 100)
           }
         ];
         this.popularity_data.data = [
-           {
-            // label: Object.keys(data)[i],
-            value: 100 - Math.floor((this.popularity_arr[i+(i+1)].value) * 100)
+          {
+            value: 100 - Math.floor((this.popularity_arr[i + (i + 1)].value) * 100)
           },
           {
-         //   label: this.popularity_arr[i+(i+1)].label,
-            value: Math.floor((this.popularity_arr[i+(i+1)].value) * 100)
+            value: Math.floor((this.popularity_arr[i + (i + 1)].value) * 100)
           }
         ];
 
@@ -230,29 +223,27 @@ export class CurrentTrendKpiComponent implements OnInit {
       let length = Object.keys(data).length;
 
       for (let i = 0; i < length; i++) {
-        console.log( Object.values(data)[i]['score'].detail.quality);
+        //console.log(Object.values(data)[i]['score'].detail.quality);
         qualitydata.push(
           {
-            // label: Object.keys(data)[i],
             value: 100 - (Object.values(data)[i]['score'].detail.quality)
-          },{
-          label: Object.keys(data)[i],
-          value: Object.values(data)[i]['score'].detail.quality
-        });
+          }, {
+            label: Object.keys(data)[i],
+            value: Object.values(data)[i]['score'].detail.quality
+          });
         popularitydata.push({
-          // label: Object.keys(data)[i],
           value: 100 - Object.values(data)[i]['score'].detail.popularity
-        },{
-          label: Object.keys(data)[i],
-          value: Object.values(data)[i]['score'].detail.popularity
-        });
+        }, {
+            label: Object.keys(data)[i],
+            value: Object.values(data)[i]['score'].detail.popularity
+          });
 
-        scoredata.push( {
+        scoredata.push({
           value: 100 - Object.values(data)[i]['score'].final
-        },{
-          label: Object.keys(data)[i],
-          value: Object.values(data)[i]['score'].final
-        })
+        }, {
+            label: Object.keys(data)[i],
+            value: Object.values(data)[i]['score'].final
+          })
 
       }
 
@@ -262,8 +253,7 @@ export class CurrentTrendKpiComponent implements OnInit {
 
       this.score_data.chart.defaultCenterLabel = Math.floor((this.pointer_data[1].value) * 100).toString() + '%';
       this.score_data.data = [
-         {
-          // label: Object.keys(data)[i],
+        {
           value: 100 - Math.floor((this.pointer_data[1].value) * 100)
         },
         {
@@ -274,28 +264,23 @@ export class CurrentTrendKpiComponent implements OnInit {
       this.popularity_data.chart.defaultCenterLabel = Math.floor((this.popularity_arr[1].value) * 100).toString() + '%';
       this.popularity_data.data = [
         {
-          // label: Object.keys(data)[i],
           value: 100 - Math.floor((this.popularity_arr[1].value) * 100)
-        },{
-        label: this.popularity_arr[1].label,
-        value: Math.floor((this.popularity_arr[1].value) * 100)
-      }
+        }, {
+          label: this.popularity_arr[1].label,
+          value: Math.floor((this.popularity_arr[1].value) * 100)
+        }
       ];
 
       this.quality_data.chart.defaultCenterLabel = Math.floor((this.quality_arr[1].value) * 100).toString() + '%';
-     
-     console.log( this.quality_arr);
+
+     // console.log(this.quality_arr);
       this.quality_data.data = [{
-        
-          // label: Object.keys(data)[i],
-          value: 100 - Math.floor((this.quality_arr[1].value) * 100)
-        },{
+        value: 100 - Math.floor((this.quality_arr[1].value) * 100)
+      }, {
         label: this.quality_arr[1].label,
         value: Math.floor((this.quality_arr[1].value) * 100)
-      }, 
+      },
       ];
-      //  this.issecondapi = true;
-
     });
   }
 }

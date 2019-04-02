@@ -16,7 +16,7 @@ const download_stats_url = `https://api.npmjs.org/downloads/range/${date_builder
 })
 export class AllTechStacksComponent implements OnInit {
   download_data: any;
-  overviewinfo:string;
+  overviewinfo: string;
   stargazers_data: any;
   contributions_data: any;
   constructor() {
@@ -98,14 +98,7 @@ export class AllTechStacksComponent implements OnInit {
         "yaxismaxvalue": null,
         "plotToolText": "<b>$label</b> framework<br/>Starts Count : <b>$datavalue</b>"
       },
-      "data": null,
-      // "trendlines": [{
-      //   "line": [{
-      //     "startvalue": "0",
-      //     "valueOnRight": "0",
-      //     "displayvalue": "0"
-      //   }]
-      // }]
+      "data": null
     };
     this.fetchStarsData();
     this.contributions_data = {
@@ -142,14 +135,7 @@ export class AllTechStacksComponent implements OnInit {
         "yaxismaxvalue": null,
         "plotToolText": "<b>$label</b> framework<br/>Contributions Count : <b>$datavalue</b>"
       },
-      "data": null,
-      // "trendlines": [{
-      //   "line": [{
-      //     "startvalue": "0",
-      //     "valueOnRight": "0",
-      //     "displayvalue": "0"
-      //   }]
-      // }]
+      "data": null
     };
     this.fetchContributionsData();
   }
@@ -198,20 +184,16 @@ export class AllTechStacksComponent implements OnInit {
         schema
       );
       this.download_data.data = fusionTable;
-      // setTimeout(() => {
-      //   this.isfirstapi = true;
-      // }, 2000);
-
     });
   }
 
   fetchStarsData() {
     let jsonify2 = res1 => res1.json();
 
-    let reactdataFetch = fetch('https://api.github.com/repos/facebook/react?state=closed&access_token=f06149369a4e0259bfd3304211e31f61bedee63e').then(jsonify2);
-    let angulardataFetch = fetch('https://api.github.com/repos/angular/angular?state=closed&access_token=f06149369a4e0259bfd3304211e31f61bedee63e').then(jsonify2);
-    let vuedataFetch = fetch('https://api.github.com/repos/vuejs/vue?state=closed&access_token=f06149369a4e0259bfd3304211e31f61bedee63e').then(jsonify2);
-    let emberdataFetch = fetch('https://api.github.com/repos/emberjs/ember.js?state=closed&access_token=f06149369a4e0259bfd3304211e31f61bedee63e').then(jsonify2);
+    let reactdataFetch = fetch('https://api.github.com/repos/facebook/react?state=closed&access_token=e147135931fa61dfed123c0a6878967e6d24e147').then(jsonify2);
+    let angulardataFetch = fetch('https://api.github.com/repos/angular/angular?state=closed&access_token=e147135931fa61dfed123c0a6878967e6d24e147').then(jsonify2);
+    let vuedataFetch = fetch('https://api.github.com/repos/vuejs/vue?state=closed&access_token=e147135931fa61dfed123c0a6878967e6d24e147').then(jsonify2);
+    let emberdataFetch = fetch('https://api.github.com/repos/emberjs/ember.js?state=closed&access_token=e147135931fa61dfed123c0a6878967e6d24e147').then(jsonify2);
 
     Promise.all([reactdataFetch, angulardataFetch, vuedataFetch, emberdataFetch]).then(res1 => {
       if (res1['message']) {
@@ -234,9 +216,6 @@ export class AllTechStacksComponent implements OnInit {
 
       }
 
-
-
-      //console.log(Math.max(...stardata.map(item => item.value), 0));
       this.stargazers_data.chart.yaxismaxvalue = Math.max(...stardata.map(item => item.value), 0) + 30000;
 
       this.stargazers_data.data = stardata;
@@ -245,7 +224,7 @@ export class AllTechStacksComponent implements OnInit {
 
   fetchContributionsData() {
     const fetchTotalContrs = (owner, repo) => {
-      const url = `https://api.github.com/repos/${owner}/${repo}/contributors?state=closed&access_token=f06149369a4e0259bfd3304211e31f61bedee63e`;
+      const url = `https://api.github.com/repos/${owner}/${repo}/contributors?state=closed&access_token=e147135931fa61dfed123c0a6878967e6d24e147`;
       return fetch(url)
         .then(resp => resp.json())
         .then(data => data.reduce((acc, curr) => acc + curr.contributions, 0))
