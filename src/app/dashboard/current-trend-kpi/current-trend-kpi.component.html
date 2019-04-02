@@ -7,7 +7,7 @@
         <li class="list-inline-item" *ngFor="let item of tech_stack"><a
             [ngClass]="lang===item.value?'badge badge-pill badge-secondary':'badge'"
             (click)="onSelectionChange(item.value)"><i
-              [ngClass]="lang===item.value?'selected_icon fc_react': item.className"></i><span class="icon-text">
+              [ngClass]="lang===item.value?'selected_icon ' +item.className: item.className"></i><span class="icon-text">
               {{item.value}}</span></a></li>
 
       </ul>

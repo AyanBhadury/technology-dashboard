@@ -211,8 +211,8 @@ img.rounded-circle {
 }
 
 .selected_icon {
-    opacity: 1;
-    color: #fff;
+    opacity: 1 !important;
+    color: #fff !important;
 }
 
 @media (max-width: 374px) {
