@@ -190,10 +190,10 @@ export class AllTechStacksComponent implements OnInit {
   fetchStarsData() {
     let jsonify2 = res1 => res1.json();
 
-    let reactdataFetch = fetch('https://api.github.com/repos/facebook/react?state=closed&access_token=e147135931fa61dfed123c0a6878967e6d24e147').then(jsonify2);
-    let angulardataFetch = fetch('https://api.github.com/repos/angular/angular?state=closed&access_token=e147135931fa61dfed123c0a6878967e6d24e147').then(jsonify2);
-    let vuedataFetch = fetch('https://api.github.com/repos/vuejs/vue?state=closed&access_token=e147135931fa61dfed123c0a6878967e6d24e147').then(jsonify2);
-    let emberdataFetch = fetch('https://api.github.com/repos/emberjs/ember.js?state=closed&access_token=e147135931fa61dfed123c0a6878967e6d24e147').then(jsonify2);
+    let reactdataFetch = fetch('https://api.github.com/repos/facebook/react?state=closed&access_token=79d612789a57b392c7d9ed965a1a7109fb102756').then(jsonify2);
+    let angulardataFetch = fetch('https://api.github.com/repos/angular/angular?state=closed&access_token=79d612789a57b392c7d9ed965a1a7109fb102756').then(jsonify2);
+    let vuedataFetch = fetch('https://api.github.com/repos/vuejs/vue?state=closed&access_token=79d612789a57b392c7d9ed965a1a7109fb102756').then(jsonify2);
+    let emberdataFetch = fetch('https://api.github.com/repos/emberjs/ember.js?state=closed&access_token=79d612789a57b392c7d9ed965a1a7109fb102756').then(jsonify2);
 
     Promise.all([reactdataFetch, angulardataFetch, vuedataFetch, emberdataFetch]).then(res1 => {
       if (res1['message']) {
@@ -224,7 +224,8 @@ export class AllTechStacksComponent implements OnInit {
 
   fetchContributionsData() {
     const fetchTotalContrs = (owner, repo) => {
-      const url = `https://api.github.com/repos/${owner}/${repo}/contributors?state=closed&access_token=e147135931fa61dfed123c0a6878967e6d24e147`;
+      const url = `https://api.github.com/repos/${owner}/${repo}/contributors?state=closed&access_token=79d612789a57b392c7d9ed965a1a7109fb102756 
+      `;
       return fetch(url)
         .then(resp => resp.json())
         .then(data => data.reduce((acc, curr) => acc + curr.contributions, 0))
